@@ -38,7 +38,7 @@ class validator {
             }
             break;
           default:
-          // do nothing
+            $current_sequential_error = "No validation criteria found !";
         }
       }
     }
