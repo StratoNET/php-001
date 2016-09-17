@@ -7,4 +7,9 @@ class PageController extends BaseController
     {
       echo $this->blade->render("home");
     }
+
+    public function getPage()
+    {
+      echo "This is a generic page";
+    }
 }

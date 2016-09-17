@@ -7,3 +7,5 @@ $router->map('GET', '/register', 'Udemy\Controllers\RegisterController@getRegist
 $router->map('POST', '/register', 'Udemy\Controllers\RegisterController@postRegisterPage', 'register_post');
 
 $router->map('GET', '/login', 'Udemy\Controllers\RegisterController@getLoginPage', 'login');
+
+$router->map('GET', '/about', 'Udemy\Controllers\PageController@getPage', 'page');
