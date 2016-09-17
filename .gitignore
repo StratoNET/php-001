@@ -5,3 +5,4 @@ vendor/
 .vagrant/
 .env
 unused/
+phinx.yml
