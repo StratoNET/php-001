@@ -25,10 +25,15 @@
 
         @yield('pagecontent')
 
-          <!-- footer -->
-          <div class="col-md-12 footer">
-              This is the footer eg. copyright information etc.
-          </div>
+        <!-- footer -->
+        <div class="col-md-12 footer">
+            <h4>StratoNET</h4>
+            stratonet&#64fastmail.net<br/>
+            +44 7733 227500
+            <div class="pull-right">
+                &#169 StratoNET Web Development {!! gmdate('Y') !!}
+            </div>
+        </div>
 
       </div> <!-- /container -->
 

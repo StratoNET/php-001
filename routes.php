@@ -8,4 +8,6 @@ $router->map('POST', '/register', 'Udemy\Controllers\RegisterController@postRegi
 
 $router->map('GET', '/login', 'Udemy\Controllers\RegisterController@getLoginPage', 'login');
 
+$router->map('GET', '/test', function() { echo "Testing routing anonymous function";});
+
 $router->map('GET', '/about', 'Udemy\Controllers\PageController@getPage', 'page');
