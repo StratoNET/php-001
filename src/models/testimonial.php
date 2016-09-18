@@ -3,7 +3,7 @@ namespace Udemy\models;
 
 use illuminate\database\Eloquent\Model as eloquent;
 
-class testimonial extends eloquent
+class Testimonial extends eloquent
 {
   public function user()
   {

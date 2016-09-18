@@ -15,7 +15,8 @@
         "respect/validation": "^1.1",
         "duncan3dc/blade": "^3.3.0",
         "robmorgan/phinx": "^0.6.4",
-        "symfony/var-dumper": "^3.1"
+        "symfony/var-dumper": "^3.1",
+        "cocur/slugify": "^2.3"
     },
     "autoload": {
       "psr-4": { "Udemy\\": "src/" }

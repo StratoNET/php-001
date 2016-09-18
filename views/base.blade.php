@@ -28,10 +28,10 @@
         <!-- footer -->
         <div class="col-md-12 footer">
             <h4>StratoNET</h4>
-            stratonet&#64fastmail.net<br/>
-            +44 7733 227500
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;</span>stratonet&#64;fastmail.net<br/>
+            <span class="glyphicon glyphicon-earphone" aria-hidden="true">&nbsp;</span>&#43;44 7733 227500
             <div class="pull-right">
-                &#169 StratoNET Web Development {!! gmdate('Y') !!}
+                &#169; StratoNET Web Development {!! gmdate('Y') !!}
             </div>
         </div>
 
