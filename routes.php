@@ -8,4 +8,11 @@ $router->map('POST', '/register', 'Udemy\Controllers\RegisterController@postRegi
 
 $router->map('GET', '/login', 'Udemy\Controllers\RegisterController@getLoginPage', 'login');
 
-$router->map('GET', '/about', 'Udemy\Controllers\PageController@getPage', 'page');
+$router->map('GET', '/page_not_found', 'Udemy\Controllers\PageController@get404', '404');
+
+$router->map('GET', '/slug', function() {
+  $slug = new Cocur\Slugify\Slugify();
+  echo $slug->slugify('About Cycling', '_');
+});
+
+$router->map('GET', '[*]', 'Udemy\Controllers\PageController@getPage', 'generic_page');

@@ -9,7 +9,7 @@ class PagesTable extends AbstractMigration
     $users = $this->table('pages');
     $users->addColumn('title', 'string')
           ->addColumn('content', 'text')
-          ->addColumn('created_at', 'datetime', ['null' => true])
+          ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
           ->addColumn('updated_at', 'datetime', ['null' => true])
           ->save();
   }
