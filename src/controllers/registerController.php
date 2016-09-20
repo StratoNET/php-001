@@ -46,9 +46,4 @@ class RegisterController extends BaseController
 
         echo "Registration posted !";
     }
-
-    public function getLoginPage()
-    {
-      echo $this->blade->render("login");
-    }
 }
