@@ -1,9 +1,9 @@
 <?php
 namespace Udemy\models;
 
-use illuminate\database\Eloquent\Model as eloquent;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Testimonial extends eloquent
+class Testimonial extends Eloquent
 {
   public function user()
   {

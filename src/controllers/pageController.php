@@ -14,6 +14,7 @@ class PageController extends BaseController
     {
       $title = "";
       $content = "";
+
     // extract required page name from requested url
       $uri = explode("/", $_SERVER['REQUEST_URI']);
       $target = $uri[1];  // not [0], as this would be empty
