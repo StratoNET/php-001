@@ -2,7 +2,18 @@
   color: #DC143C;
 }
 .footer {
-  background-color: black;
+  background-color: #222;
   color: white;
-  padding-bottom: 12px;
+  border: 1px solid #222;
+  border-radius: 3px;
+}
+.footer img {
+  margin: -57px 0px 2px -1px;
+}
+/* for Bootstrap equal column heights */
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }

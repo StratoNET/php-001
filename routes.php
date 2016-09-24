@@ -5,6 +5,7 @@
 // register
 $router->map('GET', '/register', 'Udemy\Controllers\RegisterController@getRegisterPage', 'register');
 $router->map('POST', '/register', 'Udemy\Controllers\RegisterController@postRegisterPage', 'register_post');
+$router->map('GET', '/activate_account', 'Udemy\Controllers\RegisterController@getActivateAccount', 'activate_account');
 
 // login/logout
 $router->map('GET', '/logout', 'Udemy\Controllers\AuthenticationController@getLogout', 'logout');

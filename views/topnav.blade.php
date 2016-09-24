@@ -20,8 +20,12 @@
         <li class="active"><a href="/">Home</a></li>
         <li><a href="about_cycling">About</a></li>
         <li><a href="/register">Register</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/">Contact</a></li>
+        @if(Udemy\auth\LoggedIn::user())
+          <li><a href="/logout">Logout</a></li>
+        @else
+          <li><a href="/login">Login</a></li>
+        @endif
+        <li><a href="contact_us">Contact</a></li>
   <!--  <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -35,6 +39,14 @@
           </ul>
         </li>  -->
       </ul>
+      <div class="navbar-brand pull-right">
+        @if(Udemy\auth\LoggedIn::user())
+          {!! $_SESSION['user']->first_name . " " .
+              $_SESSION['user']->last_name . " is logged in" !!}
+        @else
+          {!! "(not logged in)" !!}
+        @endif
+      </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container-fluid -->
 </nav>

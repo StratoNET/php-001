@@ -20,8 +20,8 @@ class AuthenticationController extends BaseController
       // look up the user attempting to login, can use first() as email is unique
       $user = User::where('email', '=', $email)->first();
 
-      // validate user email & password
-      if (is_null($user)) {
+      // validate user email & password provided user is found, also ensuring their account is activated
+      if (is_null($user) || ($user->active == false)) {
         $authorised = false;
       } else {
         $authorised = password_verify($password, $user->password);

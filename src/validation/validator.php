@@ -37,6 +37,15 @@ class validator {
               $current_sequential_error = $field[1] . " and its verification do NOT match, please try again";
             }
             break;
+          case 'unique':
+            // create string defining the actual model needed to validate against (eg. User)...
+            $model = "Udemy\\models\\" . $rule[1];
+            $table = new $model;
+            $check = $table::where($field[0], '=', $_REQUEST[$field[0]])->get();
+            foreach ($check as $item) {
+              $current_sequential_error = $field[1] . " (" .  $_REQUEST[$field[0]] . ") already exists in the database of current users !";
+            }
+            break;
           default:
             $current_sequential_error = "No validation criteria found !";
         }

@@ -26,13 +26,17 @@
         @yield('pagecontent')
 
         <!-- footer -->
-        <div class="col-md-12 footer">
-            <h4>StratoNET</h4>
-            <span class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;</span>stratonet&#64;fastmail.net<br/>
-            <span class="glyphicon glyphicon-earphone" aria-hidden="true">&nbsp;</span>&#43;44 7733 227500
-            <div class="pull-right">
-                &#169; StratoNET Web Development {!! gmdate('Y') !!}
-            </div>
+        <div class="row-fluid">
+          <div class="col-md-12 footer">
+              <h4>StratoNET</h4>
+              <span class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;</span>stratonet&#64;fastmail.net<br/>
+              <span class="glyphicon glyphicon-earphone" aria-hidden="true">&nbsp;</span>&#43;44 7733 227500
+              <div class="pull-right">
+                <img src="/assets/a_plus.jpg" alt="CompTIA A&#43; certification logo">
+                <img src="/assets/network_plus.jpg" alt="CompTIA Network&#43; certification logo">
+                <span style="margin-left:14px;">&#169; StratoNET Web Development {!! gmdate('Y') !!}</span>
+              </div>
+          </div>
         </div>
 
       </div> <!-- /container -->
