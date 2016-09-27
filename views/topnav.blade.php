@@ -19,32 +19,49 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">Home</a></li>
         <li><a href="about_cycling">About</a></li>
-        <li><a href="/register">Register</a></li>
-        @if(Udemy\auth\LoggedIn::user())
-          <li><a href="/logout">Logout</a></li>
-        @else
-          <li><a href="/login">Login</a></li>
-        @endif
         <li><a href="contact_us">Contact</a></li>
-  <!--  <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li class="dropdown-header">Nav header</li>
-            <li><a href="#">Separated link</a></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>  -->
+        <li><a href="/register">Register</a></li>
+        <li><a href="/testimonials">Testimonials</a></li>
+        @if(Udemy\auth\LoggedIn::user())
+          <li><a href="/add_testimonial">Add Testimonial</a></li>
+        @endif
       </ul>
-      <div class="navbar-brand pull-right">
+      <ul class="nav navbar-nav navbar-right">
+        @if((Udemy\auth\LoggedIn::user()) && (Udemy\auth\LoggedIn::user()->access_level == 1))
+          <li class="dropdown">
+            <a id="nav-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administration
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="nav-drop">
+              <li><a href="#">Edit page content</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Additional items...</li>
+              <li><a href="#">1 ...</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/logout">
+              <span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span>Logout
+            </a>
+          </li>
+        @elseif(Udemy\auth\LoggedIn::user())
+          <li>
+            <a href="/logout">
+              <span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span>Logout
+            </a>
+          </li>
+        @else
+          <li>
+            <a href="/login">
+              <span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span>Login
+            </a>
+          </li>
+        @endif
+      </ul>
+      <div class="navbar-brand navbar-right">
         @if(Udemy\auth\LoggedIn::user())
           {!! $_SESSION['user']->first_name . " " .
-              $_SESSION['user']->last_name . " is logged in" !!}
-        @else
-          {!! "(not logged in)" !!}
+              $_SESSION['user']->last_name !!}
         @endif
       </div>
     </div><!--/.nav-collapse -->

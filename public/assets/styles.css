@@ -1,15 +1,17 @@
 .error {
   color: #DC143C;
 }
-.footer {
+
+.footer-specific {
   background-color: #222;
   color: white;
   border: 1px solid #222;
   border-radius: 3px;
 }
-.footer img {
-  margin: -57px 0px 2px -1px;
+.footer-specific img {
+ margin: -57px 0px 2px -1px;
 }
+
 /* for Bootstrap equal column heights */
 .row-eq-height {
   display: -webkit-box;
@@ -17,3 +19,22 @@
   display: -ms-flexbox;
   display: flex;
 }
+/* for Bootstrap equal column heights (end)*/
+
+/* sticky footer */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* margin bottom by footer height */
+  margin-bottom: 110px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* set fixed height of footer (actual height is 91px) */
+  height: 110px;
+}
+/* sticky footer (end) */

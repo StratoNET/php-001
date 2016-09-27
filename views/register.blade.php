@@ -18,7 +18,7 @@
       <hr>
 
       <form id="registerform" name="registerform" class="form-horizontal" action="/register" method="post" novalidate>
-
+        <input type="hidden" name="_token" value="{!! htmlspecialchars($signer->getSignature()) !!}">
         <div class="form-group">
           <label for="first_name" class="col-sm-2 control-label">First Name</label>
           <div class="col-sm-10">
