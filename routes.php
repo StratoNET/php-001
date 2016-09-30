@@ -25,9 +25,8 @@ $router->map('POST', '/login', 'Udemy\Controllers\AuthenticationController@postL
 // administrators only... (access_level 0 is registered/activated (or unactivated) user,
 //                         access_level 1 is registered/activated/administrator)
 if ((Udemy\auth\LoggedIn::user()) && (Udemy\auth\LoggedIn::user()->access_level == 1)) {
-  $router->map('GET','/admin', function() {
-    echo "You are an Admin User !";
-  });
+  $router->map('POST', '/admin/page/edit', 'Udemy\Controllers\AdministrationController@postEditedPage', 'save_page');
+  $router->map('GET', '/admin/page/add', 'Udemy\Controllers\AdministrationController@getAddNewPage', 'add_page');
 }
 
 // pages

@@ -20,7 +20,7 @@
     <form id="loginform" name="loginform" class="form-horizontal" action="/login" method="post" novalidate>
       <input type="hidden" name="_token" value="{!! htmlspecialchars($signer->getSignature()) !!}">
       <div class="form-group">
-        <label for="username" class="col-sm-2 control-label">Email</label>
+        <label for="email" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-10">
           <input type="email" class="form-control required email" id="email" name="email" placeholder="yourname@example.com">
         </div>

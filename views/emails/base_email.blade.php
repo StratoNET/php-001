@@ -8,10 +8,13 @@
     <title>&nbsp;</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
-      .footer {
-        background-color: black;
+      .footer-specific {
+        background-color: #222;
         color: white;
+        border: 1px solid #222;
+        border-radius: 3px;
         padding-bottom: 12px;
+        margin-top: 60px;
       }
     </style>
   </head>
@@ -23,7 +26,7 @@
         @yield('body')
 
         <!-- footer -->
-        <div class="col-md-12 footer">
+        <div class="col-md-12 footer-specific">
             <h4>StratoNET</h4>
             <span class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;</span>stratonet&#64;fastmail.net<br/>
             <span class="glyphicon glyphicon-earphone" aria-hidden="true">&nbsp;</span>&#43;44 7733 227500

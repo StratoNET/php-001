@@ -6,3 +6,5 @@ vendor/
 .env
 unused/
 phinx.yml
+phpunit.xml
+public/ckeditor/

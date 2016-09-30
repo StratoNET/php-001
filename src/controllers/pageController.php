@@ -14,6 +14,7 @@ class PageController extends BaseController
     {
       $title = "";
       $content = "";
+      $page_id = 0;
 
     // extract required page name from requested url
       $uri = explode("/", $_SERVER['REQUEST_URI']);
@@ -26,6 +27,7 @@ class PageController extends BaseController
       foreach ($page as $item) {
         $title = $item->title;
         $content = $item->content;
+        $page_id = $item->id;
       }
 
       if (strlen($title) == 0) {
@@ -36,7 +38,8 @@ class PageController extends BaseController
     // pass content to appropriate blade template and render
       echo $this->blade->render('generic_page', [
         'title' => $title,
-        'content' => $content
+        'content' => $content,
+        'page_id' => $page_id,
       ]);
     }
 

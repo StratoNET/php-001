@@ -38,3 +38,15 @@ body {
   height: 110px;
 }
 /* sticky footer (end) */
+
+/* administration classes */
+.admin-hidden {
+    display: none;
+}
+.admin-display {
+    display:inline-block;
+}
+.outlined {
+    border: 1px solid #DC143C;
+}
+/* administration classes (end) */

@@ -33,7 +33,8 @@
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" aria-labelledby="nav-drop">
-              <li><a href="#">Edit page content</a></li>
+              <li><a href="/admin/page/add">Add new page</a></li>
+              <li><a class="menu-item" href="#" onclick="makePageEditable(this)">Edit page content</a></li>
               <li role="separator" class="divider"></li>
               <li class="dropdown-header">Additional items...</li>
               <li><a href="#">1 ...</a></li>
