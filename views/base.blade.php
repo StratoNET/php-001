@@ -10,7 +10,7 @@
     <title>
       @yield('pagetitle')
     </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/styles.css">
 
     @yield('css')
@@ -25,26 +25,36 @@
 
         @yield('pagecontent')
 
-        <!-- footer -->
-        <div class="row-fluid">
-          <div class="col-md-12 footer">
-              <h4>StratoNET</h4>
-              <span class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;</span>stratonet&#64;fastmail.net<br/>
-              <span class="glyphicon glyphicon-earphone" aria-hidden="true">&nbsp;</span>&#43;44 7733 227500
-              <div class="pull-right">
-                <img src="/assets/a_plus.jpg" alt="CompTIA A&#43; certification logo">
-                <img src="/assets/network_plus.jpg" alt="CompTIA Network&#43; certification logo">
-                <span style="margin-left:14px;">&#169; StratoNET Web Development {!! gmdate('Y') !!}</span>
-              </div>
-          </div>
-        </div>
-
       </div> <!-- /container -->
 
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.0.0.min.js" integrity="sha256-JklDYODbg0X+8sPiKkcFURb5z7RvlNMIaE3RA2z97vw=" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
-      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="row-fluid">
+            <div class="col-md-12 footer-specific">
+                <h4>StratoNET</h4>
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;</span>stratonet&#64;fastmail.net<br/>
+                <span class="glyphicon glyphicon-earphone" aria-hidden="true">&nbsp;</span>&#43;44 7733 227500
+                <div class="pull-right">
+                  <img src="/assets/a_plus.jpg" alt="CompTIA A&#43; certification logo">
+                  <img src="/assets/network_plus.jpg" alt="CompTIA Network&#43; certification logo">
+                  <span style="margin-left:14px;">&#169; StratoNET Web Development {!! gmdate('Y') !!}</span>
+                </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <script type="text/javascript" src="//code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.0.0.min.js" integrity="sha256-JklDYODbg0X+8sPiKkcFURb5z7RvlNMIaE3RA2z97vw=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
+      <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      @if((Udemy\auth\LoggedIn::user()) && (Udemy\auth\LoggedIn::user()->access_level == 1))
+        <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.11/ckeditor.js"></script> -->
+        <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+        @include('admin.admin_js')
+      @endif
 
       @yield('additionaljs')
 

@@ -23,17 +23,17 @@ class validator {
           case 'length':
             $min = $rule[1];
             $max = $rule[2];
-            if (checkInput::stringType()->length($min, $max)->validate($_REQUEST[$field[0]]) == false) {
+            if (checkInput::stringType()->length($min, $max)->validate($_POST[$field[0]]) == false) {
               $current_sequential_error = $field[1] . " must contain at least " . $min . " and no more than " . $max . " characters.";
             }
             break;
           case 'email':
-            if (checkInput::email()->validate($_REQUEST[$field[0]]) == false) {
+            if (checkInput::email()->validate($_POST[$field[0]]) == false) {
               $current_sequential_error = "Please input a valid " . $field[1] . " address.";
             }
             break;
           case 'equalTo':
-            if (checkInput::identical($_REQUEST[$field[0]])->validate($_REQUEST[$rule[1]]) == false) {
+            if (checkInput::identical($_POST[$field[0]])->validate($_POST[$rule[1]]) == false) {
               $current_sequential_error = $field[1] . " and its verification do NOT match, please try again";
             }
             break;
@@ -41,9 +41,9 @@ class validator {
             // create string defining the actual model needed to validate against (eg. User)...
             $model = "Udemy\\models\\" . $rule[1];
             $table = new $model;
-            $check = $table::where($field[0], '=', $_REQUEST[$field[0]])->get();
+            $check = $table::where($field[0], '=', $_POST[$field[0]])->get();
             foreach ($check as $item) {
-              $current_sequential_error = $field[1] . " (" .  $_REQUEST[$field[0]] . ") already exists in the database of current users !";
+              $current_sequential_error = $field[1] . " (" .  $_POST[$field[0]] . ") already exists in the database of current users !";
             }
             break;
           default:

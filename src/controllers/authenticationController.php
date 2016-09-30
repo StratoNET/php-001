@@ -8,11 +8,20 @@ class AuthenticationController extends BaseController
 {
     public function getLoginPage()
     {
-      echo $this->blade->render("login");
+      // need to pass signing code to hidden form field
+      echo $this->blade->render("login", [
+        'signer' => $this->signer,
+      ]);
     }
 
     public function postLoginPage()
     {
+      // initial test to validate signature, otherwise disallow posting
+      if (!$this->signer->validateSignature($_POST['_token'])) {
+           header('HTTP/1.0 400 Bad Request');
+           exit();
+       }
+
       $email = $_POST['email'];
       $password = $_POST['password'];
       $authorised = true;
@@ -33,8 +42,12 @@ class AuthenticationController extends BaseController
         header("Location: /");
         exit();
       } else {
-        $_SESSION['curr_seq_err'] = "Oops... invalid login, please check your email and/or password input.";
-        echo $this->blade->render("login");
+        $_SESSION['curr_seq_err'] = "Oops... invalid login, please check your email and/or password input.<br/><br/>".
+                                    "(if you are a new registrant please ensure your account has been activated<br/>".
+                                    "by clicking the link in the activation email sent to your email address)";
+        echo $this->blade->render("login", [
+          'signer' => $this->signer,
+        ]);
         unset($_SESSION['curr_seq_err']);
         exit();
       }

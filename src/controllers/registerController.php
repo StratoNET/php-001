@@ -10,7 +10,10 @@ class RegisterController extends BaseController
 {
     public function getRegisterPage()
     {
-      echo $this->blade->render("register");
+      // need to pass signing code to hidden form field
+      echo $this->blade->render("register", [
+        'signer' => $this->signer,
+      ]);
     }
 
     public function postRegisterPage()
@@ -33,17 +36,19 @@ class RegisterController extends BaseController
       if (strlen($current_sequential_error) > 0)
       {
           $_SESSION['curr_seq_err'] = $current_sequential_error;
-          echo $this->blade->render("register");
+          echo $this->blade->render("register", [
+            'signer' => $this->signer,
+          ]);
           unset($_SESSION['curr_seq_err']);
           exit();
       }
 
       // save user data to database...
       $user = new user();
-          $user->first_name = $_REQUEST['first_name'];
-          $user->last_name = $_REQUEST['last_name'];
-          $user->email = $_REQUEST['email'];
-          $user->password = password_hash($_REQUEST['password'], PASSWORD_DEFAULT);
+          $user->first_name = $_POST['first_name'];
+          $user->last_name = $_POST['last_name'];
+          $user->email = $_POST['email'];
+          $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
           $user->save();
 
       // generate new registrant account activation token immediately after saving

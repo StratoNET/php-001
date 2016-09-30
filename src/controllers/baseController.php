@@ -1,6 +1,7 @@
 <?php
 namespace Udemy\controllers;
 
+use Kunststube\CSRFP\SignatureGenerator;
 use duncan3dc\Laravel\BladeInstance;
 
 class BaseController
@@ -24,11 +25,14 @@ class BaseController
     }
 */
 
-  /* BLADE templating system */
-
+  protected $signer;
   protected $blade;
 
-  public function __construct() {
+  public function __construct()
+  {
+    /* Kunststube CSRFP */
+    $this->signer = new SignatureGenerator(getenv('CSRF_SECRET'));
+    /* BLADE templating system */
     $this->blade = new BladeInstance("/vagrant/views", "/vagrant/cache/views");
   }
 }
