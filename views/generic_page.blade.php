@@ -27,7 +27,8 @@
               <br/>
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-4">
-                    Current page title :<input type="text" class="form-control" id="title" name="title" value="{!! $title !!}" style="margin-top:4px;">
+                    <span>Current page title :</span>
+                      <input type="text" class="form-control" id="title" name="title" value="{!! $title !!}" style="margin-top:4px;">
                   </div>
                 </div>
               <br/>
