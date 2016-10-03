@@ -35,8 +35,8 @@
             @endif
           </div>
             <br/>
-            <a class="btn btn-primary" href="#!" onclick="saveEditedPage()">Save</a>
-            <a class="btn btn-info" href="#!" onclick="turnOffEditing()">Cancel</a>
+            <button type="button" class="btn btn-primary" onclick="saveEditedPage()">Save</button>
+            <button type="button" class="btn btn-info" onclick="turnOffEditing()">Cancel</button>
         </section>
         <input type="hidden" name="editedcontent" id="editedcontent">
         <input type="hidden" name="original" id="original">

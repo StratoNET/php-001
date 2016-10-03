@@ -39,6 +39,7 @@ class AdministrationController extends BaseController
 
       if ($save) {
         $page->save();
+
         echo "Page Saved";
       } else {
         echo "Page title (" . $title . ") is already in use !";
