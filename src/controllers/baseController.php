@@ -33,6 +33,6 @@ class BaseController
     /* Kunststube CSRFP */
     $this->signer = new SignatureGenerator(getenv('CSRF_SECRET'));
     /* BLADE templating system */
-    $this->blade = new BladeInstance("/vagrant/views", "/vagrant/cache/views");
+    $this->blade = new BladeInstance(getenv('VIEWS_DIR'), getenv('CACHE_DIR'));
   }
 }

@@ -37,8 +37,11 @@ class UserTable extends AbstractMigration
             ->addColumn('last_name', 'string')
             ->addColumn('email', 'string')
             ->addColumn('password', 'string')
+            ->addColumn('active', 'boolean', ['default' => '0' ])
+            ->addColumn('access_level', 'integer', ['default' => '0' ])
             ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->addColumn('updated_at', 'datetime', ['null' => true])
+            ->addIndex(['email'], ['unique' => true])
             ->save();
     }
     public function down()

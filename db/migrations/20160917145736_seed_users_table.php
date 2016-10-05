@@ -9,8 +9,12 @@ class SeedUsersTable extends AbstractMigration
       $password_hash = password_hash('grasshopper', PASSWORD_DEFAULT);
 
       $this->execute("
-      insert into users (first_name, last_name, email, password)
-      values ('Peter', 'Barrett', 'pedrobarretto@27.net', '$password_hash')
+      insert into users (first_name, last_name, email, password, active, access_level)
+      values ('Peter', 'Barrett', 'peterbarrett@fastmail.net', '$password_hash', '1', '1')
+      ");
+      $this->execute("
+      insert into users (first_name, last_name, email, password, active, access_level)
+      values ('Costa', 'The Dog', 'costa@doghouse.com', '$password_hash', '1', '0')
       ");
     }
 

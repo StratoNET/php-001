@@ -7,6 +7,11 @@ use Cocur\Slugify\Slugify;
 
 class AdministrationController extends BaseController
 {
+    /**
+     * [postEditedPage description]
+     * saves edited / new page, called via ajax
+     * @return [type] [description]
+     */
     public function postEditedPage()
     {
       $save = true;
@@ -39,6 +44,7 @@ class AdministrationController extends BaseController
 
       if ($save) {
         $page->save();
+
         echo "Page Saved";
       } else {
         echo "Page title (" . $title . ") is already in use !";

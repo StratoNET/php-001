@@ -27,15 +27,16 @@
               <br/>
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-4">
-                    Current page title :<input type="text" class="form-control" id="title" name="title" value="{!! $title !!}" style="margin-top:4px;">
+                    <span>Current page title :</span>
+                      <input type="text" class="form-control" id="title" name="title" value="{!! $title !!}" style="margin-top:4px;">
                   </div>
                 </div>
               <br/>
             @endif
           </div>
             <br/>
-            <a class="btn btn-primary" href="#!" onclick="saveEditedPage()">Save</a>
-            <a class="btn btn-info" href="#!" onclick="turnOffEditing()">Cancel</a>
+            <button type="button" class="btn btn-primary" onclick="saveEditedPage()">Save</button>
+            <button type="button" class="btn btn-info" onclick="turnOffEditing()">Cancel</button>
         </section>
         <input type="hidden" name="editedcontent" id="editedcontent">
         <input type="hidden" name="original" id="original">
@@ -53,6 +54,8 @@
 
 @section('additionaljs')
   @if($page_id == 0)
+  <!-- make a new page immediately editable rather than being
+      forced to select both add, then edit, from the dropdown -->
     <script>
       $(document).ready(function() {
         $("#editpage").load(makePageEditable(this));

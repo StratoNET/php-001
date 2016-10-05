@@ -9,8 +9,10 @@ class PagesTable extends AbstractMigration
     $users = $this->table('pages');
     $users->addColumn('title', 'string')
           ->addColumn('content', 'text')
+          ->addColumn('slug', 'string', ['default' => ''])
           ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
           ->addColumn('updated_at', 'datetime', ['null' => true])
+          ->addIndex(['slug'], ['unique' => true])
           ->save();
   }
   public function down()
