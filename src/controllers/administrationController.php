@@ -7,6 +7,11 @@ use Cocur\Slugify\Slugify;
 
 class AdministrationController extends BaseController
 {
+    /**
+     * [postEditedPage description]
+     * saves edited / new page, called via ajax
+     * @return [type] [description]
+     */
     public function postEditedPage()
     {
       $save = true;

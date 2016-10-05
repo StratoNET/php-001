@@ -54,6 +54,8 @@
 
 @section('additionaljs')
   @if($page_id == 0)
+  <!-- make a new page immediately editable rather than being
+      forced to select both add, then edit, from the dropdown -->
     <script>
       $(document).ready(function() {
         $("#editpage").load(makePageEditable(this));
